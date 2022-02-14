@@ -2,7 +2,7 @@ class MouseStalker {
 
   constructor() {
     // 動かすオブジェクト
-    this.elDot = document.querySelector('.dot');
+    this.elDot = document.querySelector('.stalker');
     // 画面全体
     this.elStage = document.querySelector('.mv');
     // マウス位置

@@ -1,25 +1,3 @@
-#stalker {
-  display: none;
-  pointer-events: none;
-  position: fixed;
-  top: -8px;
-  left: -8px;
-  width: 16px;
-  height: 16px;
-  background: rgba(0,0,0,0.5);
-  border-radius: 50%;
-  transition: transform 0.2s, top, 0.5s, left 0.5s, width .5s, height .5s, background-color .5s;
-  transition-timing-function: ease-out;
-  z-index: 999;
-}
-#stalker.hov_{
-  top: -32px;
-  left: -32px;
-  width: 64px;
-  height: 64px;
-  transition: .5s;
-  background: rgba(255, 0, 0, 0.4);
-}
 ul{
   position: absolute;
   top: 50%;
@@ -44,7 +22,7 @@ a{
   color: #000;
   font-size: 20px;
 }
-.dot {
+.stalker {
   pointer-events: none;
   position: absolute;
   top: 0;
@@ -56,7 +34,7 @@ a{
   background-color: #f00;
   transition: height .2s ease, width .2s ease;
 }
-.dot.hov_{
+.stalker.hov_{
   width: 50px;
   height: 50px;
   opacity: 0.3;
