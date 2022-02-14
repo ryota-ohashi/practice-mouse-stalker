@@ -1,0 +1,64 @@
+#stalker {
+  display: none;
+  pointer-events: none;
+  position: fixed;
+  top: -8px;     //座標調節（カーソル位置と円の中心を合わせる）
+  left: -8px;    //座標調節（カーソル位置と円の中心を合わせる）
+  width: 16px;   //マウスストーカーの直径
+  height: 16px;  //マウスストーカーの直径
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  transition: transform 0.2s, top, 0.5s, left 0.5s, width .5s, height .5s, background-color .5s;
+  transition-timing-function: ease-out;
+  z-index: 999;
+  &.hov_{
+    top: -32px;     //大きさに合わせて座標調節
+    left: -32px;    //大きさに合わせて座標調節
+    width: 64px;
+    height: 64px;
+    transition: .5s;
+    background: rgba(255, 0, 0, 0.4);
+  }
+}
+ul{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  gap: 50px;
+}
+li{
+  list-style: none;
+}
+a{
+  display: block;
+  display: grid;
+  place-items: center;
+  background-color: #f5f5f5;
+  width: 100px;
+  height: 50px;
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+}
+.dot {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  opacity: 0.5;
+  background-color: #f00;
+  transition: height .2s ease, width .2s ease;
+}
+.dot.hov_{
+  width: 50px;
+  height: 50px;
+  opacity: 0.3;
+  background-color: #0ff;
+}
