@@ -8,10 +8,22 @@ ul{
   grid-template-rows: auto auto;
   gap: 50px;
 }
-li{
+ul > li{
   list-style: none;
 }
-a{
+ul > li:nth-child(1) > a{
+  height: 100px;
+}
+ul > li:nth-child(2) > a{
+  width: 150px;
+}
+ul > li:nth-child(3) > a{
+  width: 200px;
+}
+ul > li:nth-child(4) > a{
+  height: 150px;
+}
+li > a{
   display: block;
   display: grid;
   place-items: center;
@@ -29,14 +41,19 @@ a{
   left: 0;
   width: 25px;
   height: 25px;
+  /* width: 200vmax;
+  height: 200vmax; */
   border-radius: 50%;
   opacity: 0.5;
-  background-color: #f00;
-  transition: height .2s ease, width .2s ease;
+  /* background-color: #f00; */
+  border: 2px solid #f00;
+  transition: height .2s ease, width .2s ease, border-radius .2s ease;
+  /* transition: background-color .2s ease; */
 }
-.stalker.hov_{
+.stalker.hov{
   width: 50px;
   height: 50px;
   opacity: 0.3;
-  background-color: #0ff;
+  /* background-color: #0ff; */
+  border: 1px solid #0ff;
 }
