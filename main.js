@@ -49,13 +49,13 @@ class MouseStalker {
   }
   mouseOverStalker(e){
     this.hoverFlag = true;
-    // this.elDot.classList.add('hov');
+    this.elDot.classList.add('hov');
     this.addStyle(e.currentTarget);
     this.fixStalker(e.currentTarget)
   }
   mouseOutStalker(){
     this.hoverFlag = false;
-    // this.elDot.classList.remove('hov');
+    this.elDot.classList.remove('hov');
     this.resetStyle();
   }
   addStyle(elTarget){
