@@ -21,8 +21,10 @@
 .modal__container {
   background-color: #fff;
   padding: 30px;
-  max-width: 90vw;
-  max-height: 90vh;
+  width: 90vw;
+  height: 90vh;
+  /* max-width: 90vw;
+  max-height: 90vh; */
   border-radius: 4px;
   overflow-y: auto;
   box-sizing: border-box;
@@ -60,6 +62,8 @@
 
 .modal__content img {
   width: 100%;
+  height: calc(90vh - 4rem - 117px);
+  object-fit: contain;
 }
 
 .modal__btn {
