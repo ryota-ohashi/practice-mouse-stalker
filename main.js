@@ -26,7 +26,7 @@ class MouseStalker {
       vx:0,
       vy:0
     };
-    this.elAnchorArray = Array.from(document.querySelectorAll('a:not(.no-stick)'));
+    this.elButtonArray = Array.from(document.querySelectorAll('.stalker-change'));
     this.bindEMouseMove = this.eMouseMove.bind(this);
     this.bindMouseOverStalker = this.mouseOverStalker.bind(this);
     this.bindMouseOutStalker = this.mouseOutStalker.bind(this);
@@ -39,16 +39,20 @@ class MouseStalker {
     window.requestAnimationFrame(this.bindUpdate);
     window.addEventListener('mousemove', this.bindEMouseMove);
 
-    for (let i = 0; i < this.elAnchorArray.length; i++) {
+    for (let i = 0; i < this.elButtonArray.length; i++) {
       //マウスホバー時
-      this.elAnchorArray[i].addEventListener('mouseover', this.bindMouseOverStalker);
+      this.elButtonArray[i].addEventListener('mouseover', this.bindMouseOverStalker);
 
       //マウスホバー解除時
-      this.elAnchorArray[i].addEventListener('mouseout', this.bindMouseOutStalker);
+      this.elButtonArray[i].addEventListener('mouseout', this.bindMouseOutStalker);
     }
   }
   mouseOverStalker(e){
     this.hoverFlag = true;
+    if (e.target.classList.contains('stalker-no-icon')) {
+      this.elDot.classList.add('hov');
+      this.elDot.classList.add('no-icon');
+    }
     this.elDot.classList.add('hov');
     this.addStyle(e.currentTarget);
     this.fixStalker(e.currentTarget)
@@ -56,6 +60,7 @@ class MouseStalker {
   mouseOutStalker(){
     this.hoverFlag = false;
     this.elDot.classList.remove('hov');
+    this.elDot.classList.remove('no-icon');
     this.resetStyle();
   }
   addStyle(elTarget){
@@ -109,5 +114,7 @@ class MouseStalker {
 
 window.addEventListener('DOMContentLoaded', () => {
   new MouseStalker();
-  // MicroModal.init();
+  MicroModal.init({
+    disableScroll: true
+  });
 });

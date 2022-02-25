@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./css/destyle.css">
     <link rel="stylesheet" href="./css/style.css">
-    <!-- <link rel="stylesheet" href="./css/micromodal.css"> -->
+    <link rel="stylesheet" href="./css/micromodal.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>マウスストーカー</title>
   </head>
@@ -14,55 +14,104 @@
         <h1>Nanka Tekitou Na Gallery</h1>
         <ul class="img-list">
           <li>
-            <a href="#">
+            <button class="stalker-change" data-micromodal-trigger="modal-1" role="button">
               <img src="./img/img_01.jpg" alt="">
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#">
+            <button class="stalker-change" data-micromodal-trigger="modal-2" role="button">
               <img src="./img/img_02.jpg" alt="">
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#">
+            <button class="stalker-change" data-micromodal-trigger="modal-3" role="button">
               <img src="./img/img_03.jpg" alt="">
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#">
-              <img src="./img/img_02.jpg" alt="">
-            </a>
-          </li>
-          <li>
-            <a href="#">
+            <button class="stalker-change" data-micromodal-trigger="modal-1" role="button">
               <img src="./img/img_01.jpg" alt="">
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#">
+            <button class="stalker-change" data-micromodal-trigger="modal-2" role="button">
               <img src="./img/img_02.jpg" alt="">
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#">
-              <img src="./img/img_01.jpg" alt="">
-            </a>
-          </li>
-          <li>
-            <a href="#">
+            <button class="stalker-change" data-micromodal-trigger="modal-3" role="button">
               <img src="./img/img_03.jpg" alt="">
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#">
-              <img src="./img/img_01.jpg" alt="">
-            </a>
+            <button class="stalker-change" data-micromodal-trigger="modal-2" role="button">
+              <img src="./img/img_02.jpg" alt="">
+            </button>
+          </li>
+          <li>
+            <button class="stalker-change" data-micromodal-trigger="modal-3" role="button">
+              <img src="./img/img_03.jpg" alt="">
+            </button>
           </li>
         </ul>
       </div>
       <div class="stalker"></div>
+      <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+          <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <header class="modal__header">
+              <h2 class="modal__title" id="modal-1-title">
+                写真タイトル
+              </h2>
+              <button class="modal__close stalker-change stalker-no-icon" aria-label="Close modal" data-micromodal-close></button>
+            </header>
+            <main class="modal__content" id="modal-1-content">
+              <img src="./img/img_01.jpg" alt="">
+            </main>
+            <footer class="modal__footer">
+              <button class="modal__btn stalker-change stalker-no-icon" data-micromodal-close aria-label="Close this dialog window">Close</button>
+            </footer>
+          </div>
+        </div>
+      </div>
+      <div class="modal micromodal-slide" id="modal-2" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+          <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-2-title">
+            <header class="modal__header">
+              <h2 class="modal__title" id="modal-2-title">
+                写真タイトル
+              </h2>
+              <button class="modal__close stalker-change stalker-no-icon" aria-label="Close modal" data-micromodal-close></button>
+            </header>
+            <main class="modal__content" id="modal-2-content">
+              <img src="./img/img_02.jpg" alt="">
+            </main>
+            <footer class="modal__footer">
+              <button class="modal__btn stalker-change stalker-no-icon" data-micromodal-close aria-label="Close this dialog window">Close</button>
+            </footer>
+          </div>
+        </div>
+      </div>
+      <div class="modal micromodal-slide" id="modal-3" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+          <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-3-title">
+            <header class="modal__header">
+              <h2 class="modal__title" id="modal-3-title">
+                写真タイトル
+              </h2>
+              <button class="modal__close stalker-change stalker-no-icon" aria-label="Close modal" data-micromodal-close></button>
+            </header>
+            <main class="modal__content" id="modal-3-content">
+              <img src="./img/img_03.jpg" alt="">
+            </main>
+            <footer class="modal__footer">
+              <button class="modal__btn stalker-change stalker-no-icon" data-micromodal-close aria-label="Close this dialog window">Close</button>
+            </footer>
+          </div>
+        </div>
+      </div>
     </main>
-    <!-- <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script> -->
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
