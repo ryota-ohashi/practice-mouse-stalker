@@ -7,17 +7,17 @@ class MouseStalker {
     // オブジェクトの初期スタイル
     this.elDotWidth = getComputedStyle(this.elDot).width;
     this.elDotHeight = getComputedStyle(this.elDot).height;
-    this.elBorderWidth = 2;
+    this.elBorderWidth = 3;
     this.elDotBorderRadius = getComputedStyle(this.elDot).borderRadius;
-
-    // 画面全体
-    this.elStage = document.querySelector('.mv');
 
     // マウス位置
     this.mouse = {
       x:0,
       y:0
     }
+
+    // スクロール量
+    this.scrollY = window.pageYOffset;
 
     // 動かすオブジェクトの位置
     this.dotPos = {
@@ -59,11 +59,12 @@ class MouseStalker {
     this.resetStyle();
   }
   addStyle(elTarget){
-    const elWidth = elTarget.clientWidth - this.elBorderWidth;
-    const elHeight = elTarget.clientHeight - this.elBorderWidth;
+    const elWidth = elTarget.clientWidth;
+    const elHeight = elTarget.clientHeight;
+    const elBorderRadius = getComputedStyle(elTarget).borderRadius;
     this.elDot.style.width = elWidth + 'px';
     this.elDot.style.height = elHeight + 'px';
-    this.elDot.style.borderRadius = 0 + 'px';
+    this.elDot.style.borderRadius = elBorderRadius;
   }
   resetStyle(){
     this.elDot.style.width = this.elDotWidth;
@@ -72,7 +73,7 @@ class MouseStalker {
   }
   fixStalker(elTarget){
     const fixX = elTarget.getBoundingClientRect().left;
-    const fixY = elTarget.getBoundingClientRect().top;
+    const fixY = elTarget.getBoundingClientRect().top + this.scrollY;
     this.elDot.style.transform = "matrix(1, 0, 0, 1," + fixX + ", " + fixY + ")";
   }
   update() {
@@ -95,8 +96,11 @@ class MouseStalker {
     window.requestAnimationFrame(this.bindUpdate);
   }
   eMouseMove(e) {
-    this.mouse.x = e.clientX;
-    this.mouse.y = e.clientY;
+    // this.mouse.x = e.clientX;
+    // this.mouse.y = e.clientY;
+    this.mouse.x = e.pageX;
+    this.mouse.y = e.pageY;
+    this.scrollY = window.pageYOffset;
   }
   init(){
     this.event();
@@ -105,4 +109,5 @@ class MouseStalker {
 
 window.addEventListener('DOMContentLoaded', () => {
   new MouseStalker();
+  // MicroModal.init();
 });
