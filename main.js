@@ -101,8 +101,6 @@ class MouseStalker {
     window.requestAnimationFrame(this.bindUpdate);
   }
   eMouseMove(e) {
-    // this.mouse.x = e.clientX;
-    // this.mouse.y = e.clientY;
     this.mouse.x = e.pageX;
     this.mouse.y = e.pageY;
     this.scrollY = window.pageYOffset;
